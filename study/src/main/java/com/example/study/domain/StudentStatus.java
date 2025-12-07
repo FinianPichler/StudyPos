@@ -3,7 +3,7 @@ package com.example.study.domain;
 public enum StudentStatus {
     ACTIVE("A"),
     INACTIVE("I"),
-    DELETED("D");
+    GRADUATED("G");
 
     private final String code;
 

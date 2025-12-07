@@ -72,6 +72,7 @@ public class StudentRepoTest {
         Student savedStudent = studentRepo.save(student1);
 
         assertNotNull(savedStudent.getStudentId());
+        assertEquals(StudentStatus.ACTIVE, savedStudent.getStudentStatus());
 
         Optional<Student> studentOptional = studentRepo.findById(savedStudent.getStudentId());
 

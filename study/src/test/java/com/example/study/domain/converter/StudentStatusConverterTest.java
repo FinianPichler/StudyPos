@@ -30,7 +30,7 @@ public class StudentStatusConverterTest {
         return Stream.of(
                 Arguments.of(StudentStatus.ACTIVE,("A")),
                 Arguments.of(StudentStatus.INACTIVE,("I")),
-                Arguments.of(StudentStatus.DELETED,("D"))
+                Arguments.of(StudentStatus.GRADUATED,("G"))
         );
     }
 
