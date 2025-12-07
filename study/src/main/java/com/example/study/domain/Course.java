@@ -7,7 +7,9 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
 
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,8 @@ public class Course {
     private Integer credits;
     private Integer maxStudents;
     @NotNull
-    @Convert(converter = CourseStatusConverter.class)
-    @Column(name = "course_status", nullable = false, length = 1, columnDefinition = "VARCHAR(1)")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "course_status", nullable = false)
     private CourseStatus courseStatus;
 
     @ManyToMany(

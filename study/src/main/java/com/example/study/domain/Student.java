@@ -6,7 +6,9 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
 
+import java.sql.Types;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +38,8 @@ public class Student {
     private Address address;
 
     @NotNull
-    @Convert(converter = StudentStatusConverter.class)
-    @Column(name = "student_status", nullable = false,length = 1, columnDefinition = "VARCHAR(1)")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "student_status", nullable = false)
     private StudentStatus studentStatus;
 
     @ManyToMany(
